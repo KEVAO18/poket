@@ -1,0 +1,24 @@
+{
+  "dir": "ltr",
+  "lang": "English",
+  "name": "PokeDex",
+  "short_name": "PokeDex",
+  "scope": "/poket/index.html?p=1",
+  "display": "browser",
+  "start_url": "https://kevao18.github.io/poket/index.html",
+  "background_color": "transparent",
+  "theme_color": "transparent",
+  "description": "it's a pokedex using PokeApi",
+  "orientation": "portrait",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_Pokecenter-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "url": "https://kevao18.github.io/poket/index.html?p=1",
+  "screenshots": []
+}

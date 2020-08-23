@@ -30,7 +30,7 @@ function preguntas() {
         <div class="col-md-4 col-sm-6 my-4">
           <div class="card py-2 px-2 text-center">
             <div class="card-head" style="font-size: 2.5rem;">
-              `+indice+` ` + info.results[a].name +`
+              <a class="text-danger" href="pokemon.html?p=`+indice+`">`+indice+` ` + info.results[a].name +`</a>
             </div>
             <div class='card-img-top text-center' id="img`+a+`">
               

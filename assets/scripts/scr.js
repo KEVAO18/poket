@@ -30,8 +30,7 @@ function preguntas() {
         <div class="col-md-4 col-sm-6 my-4">
           <div class="card py-2 px-2 text-center">
             <div class="card-head" style="font-size: 2.5rem;">
-              `+indice+` ` + info.results[a].name +
-              `
+              `+indice+` ` + info.results[a].name +`
             </div>
             <div class='card-img-top text-center' id="img`+a+`">
               
@@ -51,10 +50,7 @@ function preguntas() {
 
             const infor = document.getElementById('info'+a);
             const img = document.getElementById('img'+a);
-            for (let i = 0; i < info.abilities.length; i++) {
-              infor.innerHTML += `<br>` + info.abilities[i].ability.name;
-            }
-            infor.innerHTML += `<br>` + info.base_experience;
+            infor.innerHTML += `<br>` + info.types[0].type.name;
             img.innerHTML += `<img src="` + info.sprites.other.dream_world.front_default + `" class='' style='height: 20vh;'>`;
           });
       }

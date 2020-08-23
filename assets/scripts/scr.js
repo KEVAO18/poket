@@ -8,8 +8,8 @@ function preguntas() {
   pag_s = document.getElementById('pag-start');
   pag_b = document.getElementById('pag-foot');
   for (let ip = 1; ip < 8; ip++) {
-    pag_s.innerHTML +=`<a class='px-4 py-4 text-center text-danger' style='font-size: 1.5rem;' href="?p=`+ip+`">`+ip+`</a>`;
-    pag_b.innerHTML +=`<a class='px-4 py-4 text-center text-danger' style='font-size: 1.5rem;' href="?p=`+ip+`">`+ip+`</a>`;
+    pag_s.innerHTML +=`<a class='px-1 py-4 text-center text-danger' style='font-size: 1.5rem;' href="?p=`+ip+`">`+ip+`</a>`;
+    pag_b.innerHTML +=`<a class='px-1 py-4 text-center text-danger' style='font-size: 1.5rem;' href="?p=`+ip+`">`+ip+`</a>`;
   }
 
 

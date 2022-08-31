@@ -37,7 +37,7 @@ function preguntas() {
 
           $.ajax({
             type: "get",
-            url: "https://pokeapi.co/api/v2/pokemon/?limit=99&offset="+indice,
+            url: "https://pokeapi.co/api/v2/pokemon/?limit=99&offset="+item,
             dataType: "json"
           }).done(
             (info) => {

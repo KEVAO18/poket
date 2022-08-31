@@ -35,6 +35,37 @@ function preguntas() {
           h.innerHTML += info.height;
           w.innerHTML += info.weight;
 
+          $.ajax({
+            type: "get",
+            url: "https://pokeapi.co/api/v2/pokemon/?limit=99&offset="+indice,
+            dataType: "json"
+          }).done(
+            (info) => {
+              for (let i = 0; i < 2; i++) {
+                indice += 1;
+                if (indice >= 4) {
+                  break;
+                }
+                var p = document.getElementById('another'+indice);
+                p.innerHTML += `
+                <div class="col-md-4 col-sm-6 my-4">
+                  <div class="card py-2 px-2 text-center">
+                    <div class="card-head" style="font-size: 2.5rem;">
+                      <a class="text-danger" href="pokemon.html?p=`+indice+`">`+indice+` ` + info.results[a].name +`</a>
+                    </div>
+                    <div class='card-img-top text-center' id="img`+a+`">
+                      
+                    </div>
+                    <div class="card-body" style="font-size: 1.5rem;" id="info`+a+`">
+                      
+                    </div>
+                  </div>
+                </div>
+                `;
+              }
+            }
+          )
         });
     });
+
 }

@@ -26,6 +26,9 @@ function preguntas() {
           const img = document.getElementById('sprite');
           const h = document.getElementById('h');
           const w = document.getElementById('w');
+          const another_first =  document.getElementById('another1');
+          const another_second = document.getElementById('another2');
+          const another_therd = document.getElementById('another3');
           pokeId.innerHTML += info.id;
           pokeType.innerHTML += info.types[0].type.name;
           img.innerHTML += `<img src="` + info.sprites.other.dream_world.front_default + `" class='' style='height: 20vh;'>`;

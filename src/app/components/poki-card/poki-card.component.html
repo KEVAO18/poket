@@ -1,0 +1,15 @@
+<a class="text-decoration-none" [routerLink]="['/poki', pokiId]">
+    <div class="pokiCard">
+        <header>
+            <h2 class="text-dark text-center">{{ pokiData.name }}</h2>
+        </header>
+        <figure>
+            <img *ngIf="shy == 0" class="pokiCardImg"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokiId}}.png"
+                alt="Card image cap">
+            <img *ngIf="shy == 1" class="pokiCardImg"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/{{pokiId}}.png"
+                alt="Card image cap">
+        </figure>
+    </div>
+</a>

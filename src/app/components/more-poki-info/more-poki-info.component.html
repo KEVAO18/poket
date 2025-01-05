@@ -1,0 +1,83 @@
+<app-navbar></app-navbar>
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <div class="pokiCard">
+                <header>
+                    <h3 class="card-title text-center display-4">{{ id }}: {{ this.pokiData.name }}</h3>
+                </header>
+                <hr>
+                <figure>
+                    <img class="pokiCardImg" [src]="pokiImg" alt="Card image cap">
+                </figure>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="card mt-2 p-3 shadow">
+                <h5 class="card-title">Gruñidos</h5>
+                <div class="d-grid gap-2">
+                    <button id="play" (click)="cry()" title="" class="btn btn-outline-primary">
+                        <span>&#10148;</span>
+                    </button>
+                    <div class="d-inline-flex gap-2 align-items-center">
+                        <button id="down" (click)="downVolume()" title="" class="btn btn-outline-primary">
+                            <span>&minus;</span>
+                        </button>
+
+                        <input title="volumen" id="volumeRange" type="range" min="0" max="1" step="0.01"
+                            [value]="audio.volume || 0.5" (input)="setVolume($event)" class="form-range" />
+
+                        <button id="up" (click)="upVolume()" title="" class="btn btn-outline-primary">
+                            <span>&plus;</span>
+                        </button>
+                    </div>
+                    <p class="text-center border rounded border-primary py-2 btn btn-outline-primary">
+                        {{ (this.audio.volume * 100).toFixed(0) }}
+                    </p>
+                </div>
+            </div>
+            <div class="card mt-2 p-3 shadow">
+                <h4 class="text-center">Types</h4>
+                <section class="pokibody">
+                    <figure class="tipos">
+                        <img *ngFor="let types of this.pokiData.types; let i = index" class="img-fluid"
+                            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-ix/scarlet-violet/{{ pokiColors[types.type.name] }}.png"
+                            alt="Card image cap">
+                    </figure>
+                </section>
+            </div>
+            <div class="card mt-2 p-3 shadow">
+                <h4 class="text-center">Stats</h4>
+                <section class="pokibody">
+                    <article class="pokiarticle">
+                        <span id="weight" class="badge text-bg-secondary shadow rounded-pill">weight: {{
+                            this.pokiData.weight / 10 }} Kg</span>
+                    </article>
+                    <article class="pokiarticle">
+                        <span id="base_experience" class="badge text-bg-secondary shadow rounded-pill">base experience:
+                            {{ this.pokiData.base_experience }}</span>
+                    </article>
+                    <article class="pokiarticle">
+                        <span id="height" class="badge text-bg-secondary shadow rounded-pill">height: {{
+                            this.pokiData.height / 10 }} Metros</span>
+                    </article>
+                    <article class="pokiarticle" *ngFor="let stats of this.pokiData.stats; let i = index">
+                        <span [id]="stats.stat.name+id"
+                            class="badge bg-{{ (i < 3 ) ? 'success' : 'danger' }} shadow rounded-pill">{{
+                            stats.stat.name }}: {{ stats.base_stat }}</span>
+                    </article>
+                </section>
+            </div>
+            <div class="card mt-2 p-3 shadow">
+                <h4 class="text-center">Abilities</h4>
+                <section class="pokibody">
+                    <article class="pokiarticle" *ngFor="let abilities of this.pokiData.abilities; let i = index">
+                        <span [id]="abilities.ability.name + i" class="badge text-bg-primary shadow rounded-pill">{{
+                            abilities.ability.name }}</span>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

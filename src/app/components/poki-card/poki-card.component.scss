@@ -1,0 +1,44 @@
+@use '../../app.component.scss' as app;
+
+@include app.imgpoki(70%, 100%);
+
+.pokiCard{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.pokiCard > .header{
+    flex: 1;
+}
+
+.pokiCard > figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.pokiCard:hover{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.pokiCardAudio{
+    display: inline-flex;
+    // margin: ;
+    background-color: #f3f3f3; 
+    // border-width: 0 4px 0 0;
+    border-style: dashed;
+    border-radius: none;
+    border-color: #c4c4c4;
+    width: 90%;
+}
